@@ -8,7 +8,6 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 
 public class SceneManager {
     public static Stage PrimaryStage;
@@ -27,8 +26,6 @@ public class SceneManager {
 
             case Admin -> fxmlLoader = new FXMLLoader(Boot.class.getResource(Constants.AdminFXML));
         }
-
-
 
         if(fxmlLoader == null){
             ShowAlert("Error when loading scene.","fxml was null");
@@ -74,17 +71,13 @@ public class SceneManager {
             }
 
             case Client -> {
-                //fxmlLoader = new FXMLLoader(Boot.class.getResource(Constants.BootFXML));
+
             }
             case Moderator -> {
-                //fxmlLoader = new FXMLLoader(Boot.class.getResource(Constants.BootFXML));
+
             }
             case Admin -> {
-                //fxmlLoader = new FXMLLoader(Boot.class.getResource(Constants.BootFXML));
             }
         }
-    }
-    public static boolean resourceExists(String resourcePath) {
-        return Boot.class.getResource(resourcePath) != null;
     }
 }
