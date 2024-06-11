@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Button?>
+<GridPane prefHeight="400.0" prefWidth="600.0" hgap="5" vgap="5" alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projektksiegarnia.LoginViewModel">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="15" />
+        <ColumnConstraints percentWidth="70" />
+        <ColumnConstraints percentWidth="15" />
+    </columnConstraints>
+    
+    <rowConstraints>
+        <RowConstraints percentHeight="20" />
+        <RowConstraints percentHeight="15" />
+        <RowConstraints percentHeight="15" />
+        <RowConstraints percentHeight="15" />
+        <RowConstraints percentHeight="15" />
+        <RowConstraints percentHeight="20" />
+    </rowConstraints>
+
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="1"  GridPane.halignment="CENTER" text="Zaloguj się" />
+
+    <TextField fx:id="login" GridPane.columnIndex="1" GridPane.rowIndex="2"  GridPane.halignment="CENTER" />
+
+    <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="3"  GridPane.halignment="CENTER" />
+
+    <Button onAction="#OnLoginClicked" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.halignment="CENTER" text="Login" />
+
+</GridPane>

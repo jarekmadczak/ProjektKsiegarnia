@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="400.0" prefWidth="600.0" hgap="5" vgap="5" alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="33.33"/>
+        <ColumnConstraints percentWidth="33.33" />
+        <ColumnConstraints percentWidth="33.33" />
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints percentHeight="33.33"/>
+        <RowConstraints percentHeight="33.33" />
+        <RowConstraints percentHeight="33.33" />
+    </rowConstraints>
+
+    <Label  GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" text="Ladowanie strony z logowaniem..." />
+
+</GridPane>
