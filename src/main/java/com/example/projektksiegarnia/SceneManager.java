@@ -4,6 +4,7 @@ import constants.Constants;
 import constants.Scenes;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
@@ -12,6 +13,7 @@ import java.io.IOException;
 public class SceneManager {
     public static Stage PrimaryStage;
     public static Scene CurrentScene;
+    public static String DEBUG;
 
     public static void LoadScene(Scenes scene) {
         FXMLLoader fxmlLoader = null;
@@ -39,10 +41,10 @@ public class SceneManager {
                 CurrentScene = new Scene(fxmlLoader.load(), 1280, 720);
 
         }catch (IOException e){
-            ShowAlert("Error when loading scene.",e.getMessage());
+            ShowAlert("Error when loading scene. ",e.toString());
             return;
         }catch (Exception e){
-            ShowAlert("Error when loading scene.", "Resources for: " + scene.name() + " scene dont exist");
+            ShowAlert("Error when loading scene.", "Resources for: " + scene.name() + " scene dont exist" );
             return;
         }
 
@@ -64,7 +66,9 @@ public class SceneManager {
 
     static void OnSceneLoaded(Scenes scene){
         switch (scene){
-            case Boot -> LoadScene(Scenes.Login);
+            case Boot -> {
+                LoadScene(Scenes.Login);
+            }
 
             case Login -> {
 

@@ -1,19 +1,19 @@
 package constants;
 
 public class Constants {
-    public static String BootFXML = "BootScene.fxml";
-    public static String LoginFXML = "LoginScene.fxml";
-    public static String ClientFXML = "ClientScene.fxml";
-    public static String ModeratorFXML = "ModeratorScene.fxml";
-    public static String AdminFXML = "AdminScene.fxml";
+    public static final String BootFXML = "BootScene.fxml";
+    public static final String LoginFXML = "LoginScene.fxml";
+    public static final String ClientFXML = "ClientScene.fxml";
+    public static final String ModeratorFXML = "ModeratorScene.fxml";
+    public static final String AdminFXML = "AdminScene.fxml";
 
     //temporary values
-    public static String ClientLogin = "client";
+    public static final String ClientLogin = "client";
     public static String ClientPassword = "client";
 
-    public static String ModLogin = "mod";
-    public static String ModPassword = "mod";
+    public static final String ModLogin = "mod";
+    public static final String ModPassword = "mod";
 
-    public static String AdminLogin = "admin";
-    public static String AdminPassword = "admin";
+    public static final String AdminLogin = "admin";
+    public static final String AdminPassword = "admin";
 }
