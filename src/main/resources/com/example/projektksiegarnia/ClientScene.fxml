@@ -26,12 +26,12 @@
     </ScrollPane>
 
    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" spacing="30">
-       <TextField>
+       <TextField fx:id="TytulName">
 
        </TextField>
-       <ComboBox>
+       <ComboBox fx:id="GatunkiCB">
             <items>
-                <FXCollections  fx:factory="observableArrayList">
+                <FXCollections fx:factory="observableArrayList">
                     <String fx:value="1"/>
                     <String fx:value="2"/>
                     <String fx:value="3"/>
@@ -39,7 +39,7 @@
             </items>
        </ComboBox>
 
-       <ComboBox>
+       <ComboBox fx:id="JezykiCB">
            <items>
                <FXCollections fx:factory="observableArrayList">
                    <String fx:value="1"/>
@@ -49,7 +49,7 @@
            </items>
        </ComboBox>
 
-       <ComboBox>
+       <ComboBox fx:id="WydawnictwaCB">
            <items>
                <FXCollections fx:factory="observableArrayList">
                    <String fx:value="1"/>
@@ -59,11 +59,11 @@
            </items>
        </ComboBox>
 
-       <Button text="Szukaj" />
+       <Button onAction="#OnSearchClick" text="Szukaj" />
    </HBox>
 
     <ScrollPane prefHeight="120" prefWidth="360" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2">
-        <VBox spacing="30">
+        <VBox fx:id="MainContainer" spacing="30">
             <Label fx:id="MainText" />
         </VBox>
     </ScrollPane>

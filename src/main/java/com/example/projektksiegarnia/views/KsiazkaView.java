@@ -93,4 +93,8 @@ public class KsiazkaView {
         this.uzytkownik = uzytkownik;
     }
 
+    public String GetNormalizedInfo(){
+        return getTytul().getNazwa() + "\t\t\t" + getGatunek().getNazwa() + "\t\t\t" + getJezyk().getNazwa() + "\t\t\t" + getRokWydania().toString() + "\t\t\t" + getWydawnictwo().getNazwa();
+    }
+
 }

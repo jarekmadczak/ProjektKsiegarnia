@@ -19,7 +19,7 @@ public class UzytkownikView {
     private String email;
 
     public UzytkownikView(){
-        this.id = Long.getLong("0");
+        this.id = Long.MIN_VALUE;
         this.imie = "null";
         this.nazwisko = "null";
         this.email = "null";
