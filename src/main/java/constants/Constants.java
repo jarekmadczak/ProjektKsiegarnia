@@ -9,7 +9,7 @@ public class Constants {
 
     //temporary values
     public static final String ClientLogin = "client";
-    public static String ClientPassword = "client";
+    public static final String ClientPassword = "client";
 
     public static final String ModLogin = "mod";
     public static final String ModPassword = "mod";
