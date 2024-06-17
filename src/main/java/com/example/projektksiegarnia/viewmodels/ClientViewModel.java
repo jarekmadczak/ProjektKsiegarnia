@@ -124,6 +124,8 @@ public class ClientViewModel {
             case Return -> {
                 ksiazka.setUzytkownik(null);
             }
+
+
         }
         s.merge(ksiazka);
         t.commit();
