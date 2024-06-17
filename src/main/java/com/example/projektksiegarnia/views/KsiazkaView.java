@@ -1,7 +1,11 @@
 package com.example.projektksiegarnia.views;
 
+import com.example.projektksiegarnia.DataBaseManager;
 import jakarta.persistence.*;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -24,7 +28,7 @@ public class KsiazkaView {
     private WydawnictwoView wydawnictwo;
 
     @Column(name = "rok_wydania")
-    private Date rokWydania;
+    private LocalDate rokWydania;
 
     @ManyToOne
     @JoinColumn(name = "jezyk_id")
@@ -67,11 +71,11 @@ public class KsiazkaView {
         this.wydawnictwo = wydawnictwo;
     }
 
-    public Date getRokWydania() {
+    public LocalDate getRokWydania() {
         return rokWydania;
     }
 
-    public void setRokWydania(Date rokWydania) {
+    public void setRokWydania(LocalDate rokWydania) {
         this.rokWydania = rokWydania;
     }
 
@@ -81,6 +85,33 @@ public class KsiazkaView {
 
     public void setJezyk(JezykView jezyk) {
         this.jezyk = jezyk;
+    }
+
+    public static void AddNew(Long TytulID, Long GatunekID, Long WydawnictwoID, LocalDate DataWydania, Long JezykID, Long UserID){
+        Session s = DataBaseManager.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+
+        KsiazkaView ksiazka = new KsiazkaView();
+        ksiazka.setTytul(s.get(TytulView.class,TytulID));
+        ksiazka.setGatunek(s.get(GatunekView.class,GatunekID));
+        ksiazka.setWydawnictwo(s.get(WydawnictwoView.class,WydawnictwoID));
+        ksiazka.setRokWydania(DataWydania);
+        ksiazka.setJezyk(s.get(JezykView.class,JezykID));
+        if(UserID == Long.MIN_VALUE)
+            ksiazka.setUzytkownik(null);
+        else
+            ksiazka.setUzytkownik(s.get(UzytkownikView.class,UserID));
+
+        s.merge(ksiazka);
+        t.commit();
+        s.close();
+    }
+    public void RemoveThis(){
+        Session s = DataBaseManager.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        s.remove(this);
+        t.commit();
+        s.close();
     }
 
     public UzytkownikView getUzytkownik() {
