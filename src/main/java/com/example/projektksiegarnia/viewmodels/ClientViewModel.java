@@ -116,6 +116,7 @@ public class ClientViewModel {
         Session s = DataBaseManager.getSessionFactory().openSession();
         Transaction t = s.beginTransaction();
         KsiazkaView ksiazka = s.get(KsiazkaView.class,ksiazkaID);
+
         switch (option){
             case Borrow -> {
                 UzytkownikView uzytkownik = s.get(UzytkownikView.class,UserId);
@@ -133,6 +134,7 @@ public class ClientViewModel {
             case Return -> OnReturnClick();
         }
     }
+
     void SetGatunkiComboBox(){
         Session s = DataBaseManager.getSessionFactory().openSession();
         s.beginTransaction();
